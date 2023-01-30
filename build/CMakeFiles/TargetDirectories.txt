@@ -1,0 +1,3 @@
+/home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles/temp.dir
+/home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles/edit_cache.dir
+/home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles/rebuild_cache.dir
