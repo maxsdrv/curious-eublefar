@@ -1,0 +1,3 @@
+/home/maxim/Cpp/algorithms/temp/build/CMakeFiles/temp.dir
+/home/maxim/Cpp/algorithms/temp/build/CMakeFiles/edit_cache.dir
+/home/maxim/Cpp/algorithms/temp/build/CMakeFiles/rebuild_cache.dir
