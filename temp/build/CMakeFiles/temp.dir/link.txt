@@ -1,1 +1,0 @@
-/usr/bin/g++  -D_GLIBCXX_DEBUG -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -rdynamic CMakeFiles/temp.dir/source/LinkedList.cpp.o CMakeFiles/temp.dir/source/MyArray.cpp.o CMakeFiles/temp.dir/main.cpp.o -o temp 
