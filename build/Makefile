@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+source/BinarySearch.o: source/BinarySearch.cpp.o
+.PHONY : source/BinarySearch.o
+
+# target to build an object file
+source/BinarySearch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/source/BinarySearch.cpp.o
+.PHONY : source/BinarySearch.cpp.o
+
+source/BinarySearch.i: source/BinarySearch.cpp.i
+.PHONY : source/BinarySearch.i
+
+# target to preprocess a source file
+source/BinarySearch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/source/BinarySearch.cpp.i
+.PHONY : source/BinarySearch.cpp.i
+
+source/BinarySearch.s: source/BinarySearch.cpp.s
+.PHONY : source/BinarySearch.s
+
+# target to generate assembly for a file
+source/BinarySearch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/source/BinarySearch.cpp.s
+.PHONY : source/BinarySearch.cpp.s
+
 source/LinkedList.o: source/LinkedList.cpp.o
 .PHONY : source/LinkedList.o
 
@@ -213,6 +237,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... source/BinarySearch.o"
+	@echo "... source/BinarySearch.i"
+	@echo "... source/BinarySearch.s"
 	@echo "... source/LinkedList.o"
 	@echo "... source/LinkedList.i"
 	@echo "... source/LinkedList.s"

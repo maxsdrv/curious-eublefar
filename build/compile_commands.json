@@ -1,17 +1,22 @@
 [
 {
   "directory": "/home/maxim/Cpp/algorithms/curious-eublefar/build",
-  "command": "/usr/bin/g++  -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include  -D_GLIBCXX_DEBUG -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -std=gnu++17 -o CMakeFiles/temp.dir/source/LinkedList.cpp.o -c /home/maxim/Cpp/algorithms/curious-eublefar/temp/source/LinkedList.cpp",
+  "command": "/usr/bin/g++  -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include -g -std=gnu++17 -o CMakeFiles/temp.dir/source/LinkedList.cpp.o -c /home/maxim/Cpp/algorithms/curious-eublefar/temp/source/LinkedList.cpp",
   "file": "/home/maxim/Cpp/algorithms/curious-eublefar/temp/source/LinkedList.cpp"
 },
 {
   "directory": "/home/maxim/Cpp/algorithms/curious-eublefar/build",
-  "command": "/usr/bin/g++  -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include  -D_GLIBCXX_DEBUG -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -std=gnu++17 -o CMakeFiles/temp.dir/source/MyArray.cpp.o -c /home/maxim/Cpp/algorithms/curious-eublefar/temp/source/MyArray.cpp",
+  "command": "/usr/bin/g++  -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include -g -std=gnu++17 -o CMakeFiles/temp.dir/source/MyArray.cpp.o -c /home/maxim/Cpp/algorithms/curious-eublefar/temp/source/MyArray.cpp",
   "file": "/home/maxim/Cpp/algorithms/curious-eublefar/temp/source/MyArray.cpp"
 },
 {
   "directory": "/home/maxim/Cpp/algorithms/curious-eublefar/build",
-  "command": "/usr/bin/g++  -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include  -D_GLIBCXX_DEBUG -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -std=gnu++17 -o CMakeFiles/temp.dir/main.cpp.o -c /home/maxim/Cpp/algorithms/curious-eublefar/temp/main.cpp",
+  "command": "/usr/bin/g++  -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include -g -std=gnu++17 -o CMakeFiles/temp.dir/source/BinarySearch.cpp.o -c /home/maxim/Cpp/algorithms/curious-eublefar/temp/source/BinarySearch.cpp",
+  "file": "/home/maxim/Cpp/algorithms/curious-eublefar/temp/source/BinarySearch.cpp"
+},
+{
+  "directory": "/home/maxim/Cpp/algorithms/curious-eublefar/build",
+  "command": "/usr/bin/g++  -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include -g -std=gnu++17 -o CMakeFiles/temp.dir/main.cpp.o -c /home/maxim/Cpp/algorithms/curious-eublefar/temp/main.cpp",
   "file": "/home/maxim/Cpp/algorithms/curious-eublefar/temp/main.cpp"
 }
 ]

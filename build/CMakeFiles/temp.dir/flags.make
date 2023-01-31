@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/maxim/Cpp/algorithms/curious-eublefar/temp/include
 
-CXX_FLAGS =  -D_GLIBCXX_DEBUG -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -std=gnu++17
+CXX_FLAGS = -g -std=gnu++17
 

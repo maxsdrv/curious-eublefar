@@ -39,8 +39,8 @@ public:
     void print_list() const;
 
 private:
-    ListNode* head;
-
+    ListNode* head = nullptr;
+    ListNode* prev = nullptr;
     void front_back_split(ListNode** front, ListNode** back);
 
 };

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/maxim/Cpp/algorithms/curious-eublefar/temp/main.cpp" "CMakeFiles/temp.dir/main.cpp.o" "gcc" "CMakeFiles/temp.dir/main.cpp.o.d"
+  "/home/maxim/Cpp/algorithms/curious-eublefar/temp/source/BinarySearch.cpp" "CMakeFiles/temp.dir/source/BinarySearch.cpp.o" "gcc" "CMakeFiles/temp.dir/source/BinarySearch.cpp.o.d"
   "/home/maxim/Cpp/algorithms/curious-eublefar/temp/source/LinkedList.cpp" "CMakeFiles/temp.dir/source/LinkedList.cpp.o" "gcc" "CMakeFiles/temp.dir/source/LinkedList.cpp.o.d"
   "/home/maxim/Cpp/algorithms/curious-eublefar/temp/source/MyArray.cpp" "CMakeFiles/temp.dir/source/MyArray.cpp.o" "gcc" "CMakeFiles/temp.dir/source/MyArray.cpp.o.d"
   )

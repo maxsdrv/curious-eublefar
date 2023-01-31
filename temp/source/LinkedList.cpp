@@ -8,13 +8,15 @@ void LinkedList::push_front(int value) {
 	auto new_node = new ListNode(value);
 	if (head==nullptr) {
 		head = new_node;
+		prev = head;
 		return;
 	}
-	ListNode* temp = head;
+	ListNode* temp = prev;
 	while (temp->next) {
 		temp = temp->next;
 	}
 	temp->next = new_node;
+	prev = temp->next;
 }
 void LinkedList::pop() {
 	assert(head!=nullptr);
@@ -117,38 +119,42 @@ int LinkedList::length() {
 	return count;
 }
 ListNode* LinkedList::mergeKLists(std::vector<ListNode*>& lists) {
-	// auto* new_head = new ListNode;
-	auto new_head = std::make_unique<ListNode>();
-	auto n = new_head.get();
+	auto* new_head = new ListNode;
+	auto n = new_head;
 	int a = 0;
 	int b = 1;
 	if (lists.empty()) {
-		return new_head.get();
+		delete new_head;
+		return {};
+	}
+	if (lists[0] == nullptr && lists.size() == 1) {
+		delete new_head;
+		return lists[0];
 	}
 	while (true) {
 		if (lists[a] == nullptr) {
-			while (lists[b] != nullptr) {
-				n->next = lists[b];
-				n = lists[b];
-				lists[b] = lists[b]->next;
-			}
-			n->next = nullptr;
-			n = nullptr;
-			lists.push_back(new_head->next);
-			lists[a] = std::move(lists.back());
-			lists.pop_back();
-			if (static_cast<int>(lists.size()) > 2) {
+			if (static_cast<int>(lists.size()) > 1) {
+				while (lists[b] != nullptr) {
+					n->next = lists[b];
+					n = lists[b];
+					lists[b] = lists[b]->next;
+				}
+				n->next = nullptr;
+				n = nullptr;
+				lists.push_back(new_head->next);
+				lists[a] = std::move(lists.back());
+				lists.pop_back();
 				lists[b] = std::move(lists.back());
 				lists.pop_back();
+				n = new_head;
 			}
 			else {
-				lists.pop_back();
+				return lists[a];	
 			}
-			n = new_head.get();
 		}
 
 		if (static_cast<int>(lists.size()) == 1) {
-			return new_head->next;
+			return lists[a];
 		}		
 
 		if(lists[b] == nullptr) {
@@ -162,30 +168,24 @@ ListNode* LinkedList::mergeKLists(std::vector<ListNode*>& lists) {
 			lists.push_back(new_head->next);
 			lists[a] = std::move(lists.back());
 			lists.pop_back();
-			if (static_cast<int>(lists.size()) > 2) {
-				lists[b] = std::move(lists.back());
-				lists.pop_back();
+			lists[b] = std::move(lists.back());
+			lists.pop_back();
+			n = new_head;
+		}
+		if (lists[a] != nullptr && lists[b] != nullptr) {
+			if (lists[a]->val < lists[b]->val) {
+				n->next = lists[a];
+				n = lists[a];
+				lists[a] = lists[a]->next;
 			}
 			else {
-				lists.pop_back();
+				n->next = lists[b];
+				n = lists[b];
+				lists[b] = lists[b]->next;		
 			}
-			n = new_head.get();
-		}
-		if (static_cast<int>(lists.size()) == 1) {
-			return new_head->next;
-		}
-		if (lists[a]->val < lists[b]->val) {
-			n->next = lists[a];
-			n = lists[a];
-			lists[a] = lists[a]->next;
-		}
-		else {
-			n->next = lists[b];
-			n = lists[b];
-			lists[b] = lists[b]->next;		
 		}
 	}
-	return new_head->next;
+	delete new_head;
 }
 ListNode* LinkedList::test_merge(ListNode* a, ListNode* b) {
 	auto* new_head = new ListNode;

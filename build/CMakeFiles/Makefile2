@@ -81,12 +81,12 @@ clean: CMakeFiles/temp.dir/clean
 CMakeFiles/temp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles --progress-num=1,2,3,4 "Built target temp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target temp"
 .PHONY : CMakeFiles/temp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/temp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/temp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/maxim/Cpp/algorithms/curious-eublefar/build/CMakeFiles 0
 .PHONY : CMakeFiles/temp.dir/rule
