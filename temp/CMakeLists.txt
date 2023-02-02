@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -D_CMAKE_CXX_COMPILE=/usr/bin/g++-11)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_GLIBCXX_DEBUG -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls")
 
 set(source)
@@ -16,7 +17,8 @@ list(APPEND headers
         include/LinkedList.h
         include/MyArray.h
         include/BinarySearch.h
-        include/profile.h)
+        include/profile.h
+        include/StringSet.hpp)
 include_directories(include)
 
 if (NOT DEFINED CMAKE_BUILD_TYPE)

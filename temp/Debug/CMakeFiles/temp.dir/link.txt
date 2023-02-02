@@ -1,0 +1,1 @@
+/usr/bin/c++ -D_CMAKE_CXX_COMPILE=/usr/bin/g++-11 -g -rdynamic CMakeFiles/temp.dir/source/LinkedList.cpp.o CMakeFiles/temp.dir/source/MyArray.cpp.o CMakeFiles/temp.dir/source/BinarySearch.cpp.o CMakeFiles/temp.dir/main.cpp.o -o temp 

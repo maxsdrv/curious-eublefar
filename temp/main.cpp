@@ -8,11 +8,14 @@
 #include <list>
 #include <cassert>
 #include <random>
+#include <map>
+
 
 #include "LinkedList.h"
 #include "MyArray.h"
 #include "BinarySearch.h"
 #include "profile.h"
+#include "StringSet.hpp"
 
 void print(const char* array) {
 	std::copy(array, array+sizeof(array), std::ostream_iterator<char>(std::cout << " "));
@@ -98,7 +101,7 @@ ListNode* modern_mergeK_lists(std::vector<ListNode*>& vec) {
 }
 
 int main(int argc, char* argv[]) {
-	std::vector<int> v {-1};
+	/*std::vector<int> v {-1};
 	auto res = binary_search(v, 2);
 	std::cout << "Result Binary Search = " << res << '\n';	
 	std::vector<int> arr {1 , 2, 4, 6, 7};
@@ -129,7 +132,25 @@ int main(int argc, char* argv[]) {
 
 
 	std::vector<ListNode*> vec_lists {l1, l2, l3, l4, {}, {}, {}};
-	auto result_mK = modern_mergeK_lists(vec_lists);
+	// auto result_mK = modern_mergeK_lists(vec_lists);
+
+	std::vector<int> pupi {1, 2, 4};
+	auto it = pupi.begin();
+	std::advance(it, 2);
+	std::cout << "Advance: " << '\n';
+	std::cout << *it << '\n';
+	it = pupi.end();
+	std::advance(it, -3);
+	std::cout << *it << '\n';
+*/
+
+    StringSet string;
+    string.add("upper", 10);
+    string.add("lower", 0);
+    std::cout << "Last= " << string.find_last() << '\n';
+    std::cout << "Best= " << string.find_best() << '\n';
+
+
 
 	return 0;
 }
