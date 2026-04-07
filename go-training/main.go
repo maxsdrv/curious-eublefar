@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"math"
 	"sync"
 	"time"
 )
@@ -103,6 +104,10 @@ func DoSomething(t Testing) {
 	t.Method()
 }
 
+func changeValue(v *int) {
+	*v = 456
+}
+
 func main() {
 	_, cancel := context.WithCancel(context.Background())
 	defer cancel()
@@ -178,5 +183,39 @@ func main() {
 	}
 	*/
 
-	runPrintNumber()
+	//runPrintNumber()
+
+	var t1 int32
+	t1 = math.MaxInt32
+	t1++
+	fmt.Println(t1)
+
+	//var t2 int32
+	//t2 = math.MaxInt32 + 1
+	//fmt.Println(t2)
+
+	t3 := math.MaxInt32 + 1
+	fmt.Println(t3)
+
+	arr := make([]int, 0, 0)
+	for i := 1; i <= 12; i++ {
+		arr = append(arr, i)
+		// len 1 cap 1
+		// len 2 cap 2
+		// len 3 cap 4
+		// len 4 cap 4
+		// len 5 cap 8
+		// len 6 cap 8
+		// len 7 cap 8
+		// len 8 cap 8
+		// len 9 cap 9
+		// len 10 cap 16
+		// len 11 cap 16
+		// len 12 cap 16
+	}
+
+	value := 123
+	//defer fmt.Println(value)
+	defer func() { fmt.Println(value) }()
+	changeValue(&value)
 }
