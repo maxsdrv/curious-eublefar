@@ -2,12 +2,9 @@ package main
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"sync"
 	"time"
-
-	"go-training/fan_in"
 )
 
 func rateLimiter() {
@@ -64,9 +61,55 @@ func rateLimiter() {
 	wg.Wait()
 }
 
+func printNumber(n int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	time.Sleep(time.Second)
+	fmt.Println(n)
+}
+
+func runPrintNumber() {
+	var wg sync.WaitGroup
+
+	limiter := make(chan struct{}, 3)
+
+	for i := 1; i <= 10; i++ {
+		wg.Add(1)
+		go func(i int) {
+			limiter <- struct{}{}
+			defer func() { <-limiter }()
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("panic:", r)
+				}
+			}()
+			printNumber(i, &wg)
+		}(i)
+	}
+	wg.Wait()
+}
+
+type Testing interface {
+	Method()
+}
+type MyStruct struct {
+}
+
+func (m *MyStruct) Method() {
+	fmt.Println("method")
+}
+
+func DoSomething(t Testing) {
+	fmt.Println("Method called")
+	t.Method()
+}
+
 func main() {
-	ctx, cancel := context.WithCancel(context.Background())
+	_, cancel := context.WithCancel(context.Background())
 	defer cancel()
+
+	// Interface example
+	//m := &MyStruct{}
+	//DoSomething(m)
 
 	//s := make([]int, 10, 15)
 	//s2 := s[2:8]
@@ -76,20 +119,21 @@ func main() {
 
 	//rateLimiter()
 
-	/*
-		input := make(chan string, 3)
-		input <- "INFO: hello"
-		input <- "ERROR: world"
-		input <- "DEBUG: sentinel"
-		close(input)
+	/* Worker Pool example usage:
+	input := make(chan string, 3)
+	input <- "INFO: hello"
+	input <- "ERROR: world"
+	input <- "DEBUG: sentinel"
+	close(input)
 
-		output := worker_pool.ProcessLogs(ctx, input, 10)
+	output := worker_pool.ProcessLogs(ctx, input, 10)
 
-		for entry := range output {
-			fmt.Printf("Level: %s, Message: %s\n", entry.Level, entry.Message)
-		}
+	for entry := range output {
+		fmt.Printf("Level: %s, Message: %s\n", entry.Level, entry.Message)
+	}
 	*/
 
+	/* Fain In with Error example usage:
 	source1 := make(chan fan_in.Result, 2)
 	source2 := make(chan fan_in.Result, 2)
 
@@ -107,4 +151,32 @@ func main() {
 		}
 		fmt.Println(r.Value)
 	}
+	*/
+
+	//Pub Sub example usage:
+	/*b := pub_sub.NewBroadcaster[string]()
+
+	sub1, err := b.Subscribe(10)
+	sub2, err := b.Subscribe(10)
+	if err != nil {
+		panic(err)
+	}
+
+	b.Publish("event-1")
+	b.Publish("event-2")
+
+	b.Unsubscribe(sub2)
+	b.Publish("event-3") // only sub1 receives this
+
+	b.Stop()
+
+	for msg := range sub1 {
+		fmt.Printf("Subscriber 1: %s\n", msg)
+	}
+	for msg := range sub2 {
+		fmt.Printf("Subscriber 2: %s\n", msg)
+	}
+	*/
+
+	runPrintNumber()
 }
